@@ -33,9 +33,6 @@ importers:
       '@rspack/cli':
         specifier: ^0.3.10
         version: 0.3.10(react-refresh@0.14.0)
-      '@rspack/core':
-        specifier: ^0.3.10
-        version: 0.3.10
 
 packages:
 
