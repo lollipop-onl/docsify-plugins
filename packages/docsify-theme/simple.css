@@ -1,0 +1,49 @@
+:root {
+  /** override docsify theme */
+  --base-font-size: 16px;
+  --content-max-width: 1200px;
+  --navbar-root-color: var(--theme-color);
+  --navbar-root-text-decoration--hover: underline;
+  --sidebar-width: 24rem;
+  --link-color--hover: var(--theme-color);
+  --link-text-decoration--hover: none;
+
+  /** code block (based on Zenn) */
+  --code-theme-background: #1a2638;
+  --code-theme-comment: #94a1b3;
+  --code-theme-function: #38c7ff;
+  --code-theme-keyword: #ff8fa3;
+  --code-theme-operator: #ffc56d;
+  --code-theme-punctuation: #939bc1;
+  --code-theme-selector: #ffc56d;
+  --code-theme-tag: #38c7ff;
+  --code-theme-text: #fff;
+  --code-theme-variable: #ffc56d;
+
+  /** inline code (based on Zenn) */
+  --code-inline-border-radius: 6px;
+  --code-inline-color: var(--base-color);
+  --code-inline-background: #215aa012;
+}
+
+svg text {
+  font-family: var(--base-font-family) !important;
+}
+
+video {
+  max-width: 100%;
+}
+
+main > .content {
+  padding-top: 6rem;
+}
+
+main details {
+  padding: 1rem 1.5rem;
+  border: 0.1rem solid var(--mono-tint2);
+  border-radius: 0.2rem;
+}
+
+main details > summary {
+  cursor: pointer;
+}

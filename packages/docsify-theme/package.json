@@ -1,6 +1,6 @@
 {
-  "name": "docsify-plugin-page-history",
-  "version": "1.1.0",
+  "name": "@lollipop-onl/docsify-theme",
+  "version": "1.0.3",
   "keywords": [
     "docsify"
   ],
@@ -15,20 +15,8 @@
     "email": "lollipop@simochee.net",
     "url": "https://simochee.net"
   },
-  "type": "module",
-  "main": "./lib/index.js",
+  "main": "./simple.css",
   "files": [
-    "lib"
-  ],
-  "scripts": {
-    "build": "rspack build",
-    "dev": "rspack serve"
-  },
-  "dependencies": {
-    "htm": "^3.1.1",
-    "vhtml": "^2.2.0"
-  },
-  "devDependencies": {
-    "@rspack/cli": "^0.3.10"
-  }
+    "*.css"
+  ]
 }
