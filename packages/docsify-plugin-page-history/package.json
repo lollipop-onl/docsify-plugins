@@ -1,0 +1,26 @@
+{
+  "name": "docsify-plugin-page-history",
+  "version": "1.1.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lollipop-onl/docsify-plugin-page-history.git",
+    "directory": "packages/docsify-plugin-page-history"
+  },
+  "license": "MIT",
+  "type": "module",
+  "main": "./lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "rspack build",
+    "dev": "rspack serve"
+  },
+  "dependencies": {
+    "htm": "^3.1.1",
+    "vhtml": "^2.2.0"
+  },
+  "devDependencies": {
+    "@rspack/cli": "^0.3.10"
+  }
+}

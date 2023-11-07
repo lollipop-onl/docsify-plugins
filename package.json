@@ -3,6 +3,7 @@
   "license": "MIT",
   "scripts": {
     "build": "turbo build",
+    "changeset": "changeset",
     "dev": "turbo dev",
     "format": "prettier --write .",
     "release": "turbo build && changeset publish"
