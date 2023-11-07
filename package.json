@@ -2,11 +2,14 @@
   "private": true,
   "license": "MIT",
   "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
     "format": "prettier --write ."
   },
   "devDependencies": {
     "prettier": "^3.0.3",
-    "prettier-plugin-packagejson": "^2.4.6"
+    "prettier-plugin-packagejson": "^2.4.6",
+    "turbo": "^1.10.16"
   },
   "packageManager": "pnpm@8.10.2"
 }
