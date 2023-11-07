@@ -1,13 +1,13 @@
 {
   "name": "@lollipop-onl/docsify-theme",
-  "version": "1.0.4",
+  "version": "1.0.3",
   "keywords": [
     "docsify"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lollipop-onl/docsify-plugin-page-history.git",
-    "directory": "packages/docsify-plugin-page-history"
+    "url": "https://github.com/lollipop-onl/docsify-plugins.git",
+    "directory": "packages/docsify-theme"
   },
   "license": "MIT",
   "author": {
