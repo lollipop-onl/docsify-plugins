@@ -27,7 +27,7 @@ jobs:
 
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
-      
+
       - id: changesets
         uses: changesets/action@v1
         with:
