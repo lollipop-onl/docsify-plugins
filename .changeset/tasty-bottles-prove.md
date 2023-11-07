@@ -3,4 +3,4 @@
 "@lollipop-onl/docsify-theme": patch
 ---
 
-Codebase migration to monorepo
+Codebase migrate to monorepo
