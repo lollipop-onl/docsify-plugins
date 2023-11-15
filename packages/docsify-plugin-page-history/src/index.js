@@ -53,7 +53,7 @@ const install = (hook, vm) => {
   hook.beforeEach((content) => {
     return content.replace(
       /(?:^|\n)@\[page-history\](?:$|\n)/g,
-      '\n<ul class="docsify-page-history-list"></ul>\n',
+      '\n<div class="docsify-page-history-list"></div>\n',
     );
   });
 
@@ -64,28 +64,28 @@ const install = (hook, vm) => {
 
     const history = await collectHistory(vm.router);
 
-    console.log(vm.router);
-
     for (const el of elms) {
       el.innerHTML = html`
-        <li>
+        <ul>
           ${history.map(
             ({ date, items }) => html`
-              <strong>${date}</strong>
-              <ul>
-                ${items.map(
-                  ({ path, title, message }) => html`
-                    <li>
-                      <a href="${vm.router.toURL(path)}" title="${message}"
-                        >${title}</a
-                      >
-                    </li>
-                  `,
-                )}
-              </ul>
+              <li>
+                <strong>${date}</strong>
+                <ul>
+                  ${items.map(
+                    ({ path, title, message }) => html`
+                      <li>
+                        <a href="${vm.router.toURL(path)}" title="${message}">
+                          ${title}
+                        </a>
+                      </li>
+                    `,
+                  )}
+                </ul>
+              </li>
             `,
           )}
-        </li>
+        </ul>
       `;
     }
   });

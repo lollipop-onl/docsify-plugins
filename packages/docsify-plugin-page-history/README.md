@@ -43,6 +43,14 @@ history:
 > **Note**
 > Known Issue: cannot use list in message.
 
+## All history
+
+Add `@[page-history]` to your markdown file. Collection of all history will be inserted.
+
+```md
+@[page-history]
+```
+
 ## License
 
 MIT
