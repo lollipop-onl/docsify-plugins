@@ -1,11 +1,13 @@
 import htm from "htm/mini";
 import vhtml from "vhtml";
 import { parseHistory, msg } from "./utils.js";
+import { collectHistory } from "./collect.js";
 
 const html = htm.bind(vhtml);
 
 /** プラグインをインストール */
 const install = (hook, vm) => {
+  // ページに履歴を追加
   hook.afterEach((content) => {
     if (!vm.frontmatter) {
       console.warn(
@@ -45,6 +47,47 @@ const install = (hook, vm) => {
     `;
 
     return `${content}${details}`;
+  });
+
+  // @[page-history] を履歴一覧に置換
+  hook.beforeEach((content) => {
+    return content.replace(
+      /(?:^|\n)@\[page-history\](?:$|\n)/g,
+      '\n<ul class="docsify-page-history-list"></ul>\n',
+    );
+  });
+
+  hook.doneEach(async () => {
+    const elms = document.getElementsByClassName("docsify-page-history-list");
+
+    if (!elms.length === 0) return;
+
+    const history = await collectHistory(vm.router);
+
+    console.log(vm.router);
+
+    for (const el of elms) {
+      el.innerHTML = html`
+        <li>
+          ${history.map(
+            ({ date, items }) => html`
+              <strong>${date}</strong>
+              <ul>
+                ${items.map(
+                  ({ path, title, message }) => html`
+                    <li>
+                      <a href="${vm.router.toURL(path)}" title="${message}"
+                        >${title}</a
+                      >
+                    </li>
+                  `,
+                )}
+              </ul>
+            `,
+          )}
+        </li>
+      `;
+    }
   });
 };
 
