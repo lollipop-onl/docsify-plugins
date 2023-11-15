@@ -25,6 +25,7 @@
     "dev": "rspack serve"
   },
   "dependencies": {
+    "front-matter": "^4.0.2",
     "htm": "^3.1.1",
     "vhtml": "^2.2.0"
   },
